@@ -96,11 +96,11 @@ text-decoration: none;
     box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
     transition: all 0.3s ease-in-out 0s;
 }
-.menu ul li:hover>.dropdown{
+/* .menu ul li:hover>.dropdown{
     opacity: 1;
     z-index:99;
     transform: translateY(0);
-}
+} */
 .menu ul li .dropdown .dropdown-item{ 
     font-size: 13px;
     color: #666;

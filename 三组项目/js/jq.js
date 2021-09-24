@@ -1,5 +1,5 @@
 $(function () {
-  //menu效果
+  // menu效果
   // $('.menu ul li').hover(function () {
   //   // $(this).children('.dropdown')
   //   $(this).children('.dropdown').stop().animate({
@@ -9,10 +9,22 @@ $(function () {
   // }, function () {
   //   $(this).children('.dropdown').stop().animate({
   //     'opacity': 0,
-  //     'top': '200%'
+
   //   })
   // })
-  //
+  var lii = document.querySelectorAll('.menu ul li')
+  for (var i = 1; i < lii.length; i++) {
+    lii[i].onmouseover = function () {
+      this.children[1].style.opacity = 1
+      this.children[1].style.zIndex = 99
+      this.children[1].style.transform = 'translateY(0)'
+    }
+    lii[i].onmouseout = function () {
+      this.children[1].style.opacity = 0
+      this.children[1].style.zIndex = -99
+      this.children[1].style.transform = ' translateY(40px)'
+    }
+  }
   //swiper 轮播图
   var mySwiper = new Swiper('.swiper-container2', {
     direction: 'horizontal', // 垂直切换选项

@@ -12,7 +12,7 @@
     <!-- isotope  -->
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
     <link rel="stylesheet" href="css/headerfooter.css">
-    <script src="js/jq.js"></script>
+    <!-- <script src="js/jq.js"></script> -->
     <link rel="stylesheet" href="css/css.css">
     <link rel="stylesheet" href="css/broflio.css">
     <link rel="stylesheet" href="css/contact.css">
@@ -109,15 +109,25 @@
                         <div class="col-md-6">
                             <div class="group">
                                 <input type="text" id="name" placeholder="Your Name" class="control">
+                                <span class="name-tip tips
+                                ">Please enter your name</span>
                             </div>
                             <div class="group"> <input type="text" id="email" placeholder="Your Email" class="control">
+                                <span class="email-tip tips
+                                ">Please enter your Email</span>
                             </div>
-                            <div class="group"><input type="text" id="subjext" placeholder="Your Subject"
-                                    class="control"></div>
+                            <div class="group"><input type="text" id="subject" placeholder="Your Subject"
+                                    class="control">
+                                <span class="subject-tip tips
+                                ">Please enter your Subject</span>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <textarea placeholder="Your Message" rows="10" id="message" class="control" name="message"
-                                required="" data-error="Write your message"></textarea>
+                                required="" data-error="Write your message">
+                               </textarea>
+                            <span class="message-tip tips
+                            ">Please enter your message</span>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -151,7 +161,47 @@
         </div>
 
         <script>
+
+            $('#name').blur(function () {
+                var tex = $(this).val().trim()
+                if (!tex) {
+                    $('.name-tip').css('opacity', 1)
+                } else {
+                    $('.name-tip').css('opacity', 0)
+                }
+                console.log(tex);
+            })
+            $('#subject').blur(function () {
+                var tex = $(this).val().trim()
+                if (!tex) {
+                    $('.subject-tip').css('opacity', 1)
+                } else {
+                    $('.subject-tip').css('opacity', 0)
+                }
+                console.log(tex);
+            })
+            $('#message').blur(function () {
+                var tex = $(this).val().trim()
+                if (!tex) {
+                    $('.message-tip').css('opacity', 1)
+                } else {
+                    $('.message-tip').css('opacity', 0)
+                }
+                console.log(tex);
+            })
+            //email
             var emlre = / ^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+            $('#email').blur(function () {
+                var tex = $(this).val().trim()
+                var pand = emlre.test(tex)
+                if (!pand) {
+                    $('.email-tip').css('opacity', 1)
+                } else {
+                    $('.email-tip').css('opacity', 0)
+                }
+                console.log(tex);
+            })
+
         </script>
     </section>
     <footer>

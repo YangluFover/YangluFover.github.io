@@ -75,14 +75,14 @@ header{
     transition: all 0.3s
 }
 .menu ul li:hover>a,.menu ul li .dropdown .dropdown-item:hover,.service-item h2:hover{
-    color: #9C3;
-    text-decoration: none;
-  
+color: #9C3;
+text-decoration: none; 
 }
 .menu ul li .dropdown{
     position:absolute;
-    display: none;
-    /* opacity: 0; */
+    /* display: none; */
+    opacity: 0;
+    transform: translateY(40px);
     padding: 0;
     border-radius: 0;
     top: 100%;
@@ -91,12 +91,17 @@ header{
     margin-top: 0px;
     width: 220px;
     border: none;
-    z-index: 99;
+    z-index:-99;
     background: #fff;
     box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    transition: all 0.3s ease-in-out 0s;
 }
-.menu ul li .dropdown .dropdown-item{
-   
+.menu ul li:hover>.dropdown{
+    opacity: 1;
+    z-index:99;
+    transform: translateY(0);
+}
+.menu ul li .dropdown .dropdown-item{ 
     font-size: 13px;
     color: #666;
     display: block;
@@ -113,7 +118,6 @@ header{
 .search input{
 line-height: 38px;
     border: 1px solid #E4E4E4;
-
     width: 100%;
     padding: 1px 20px 0 40px;
     color: #818B8D;

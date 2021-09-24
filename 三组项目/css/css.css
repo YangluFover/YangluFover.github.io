@@ -40,6 +40,11 @@ background: url(../images/skin.png);
 .swiper-pagination-bullet-active {
     background: #9C3 none repeat scroll 0 0;
 }
+#banner .swiper-slide .page{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 26, 26,0.5);
+}
 .banner-inner{
     position: absolute;
     top: 30%;
@@ -244,7 +249,6 @@ width: 100%;
     width: 370px;
 position: absolute;
 height: 100%;
-/* opacity: 0; */
         top: 0;
     }
 .sup-desc-wrap .sup-desc-inner {

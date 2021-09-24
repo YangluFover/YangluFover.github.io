@@ -1,9 +1,17 @@
 $(function () {
   //menu效果
-  $('.menu ul li').hover(function () {
-    // $(this).children('.dropdown')
-    $(this).children('.dropdown').stop().fadeToggle(500)
-  })
+  // $('.menu ul li').hover(function () {
+  //   // $(this).children('.dropdown')
+  //   $(this).children('.dropdown').stop().animate({
+  //     'opacity': 1,
+  //     'top': '100%'
+  //   })
+  // }, function () {
+  //   $(this).children('.dropdown').stop().animate({
+  //     'opacity': 0,
+  //     'top': '200%'
+  //   })
+  // })
   //
   //swiper 轮播图
   var mySwiper = new Swiper('.swiper-container2', {

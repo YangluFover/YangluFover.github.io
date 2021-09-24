@@ -16,7 +16,7 @@ box-shadow: none;
 display: block;
 width: 100%;
 padding: .5rem .75rem;
-margin-bottom: 19px;
+/* margin-bottom: 10px; */
 border: 1px solid rgba(0,0,0,.15)
 }
 .control:focus {
@@ -60,4 +60,14 @@ p {
 }
 .btn-common:hover::before{
     width: 100%;
+}
+.tips{
+    display: block;
+    color: red;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    opacity: 0;
 }

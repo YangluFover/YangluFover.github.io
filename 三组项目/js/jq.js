@@ -1,4 +1,25 @@
 $(function () {
+  //header fixed
+  $(window).scroll(function () {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 300) {
+      $('header').stop().slideDown(100);
+      $('header').css({
+        'position': 'fixed',
+        'top': 0,
+        'z-index': 999
+      })
+      $('.fanding').stop().show()
+
+    } else {
+
+      $('header').css({
+        'position': 'relative',
+        'top': '0'
+      })
+      $('.fanding').stop().hide()
+    }
+  })
   // menu效果
   // $('.menu ul li').hover(function () {
   //   // $(this).children('.dropdown')
@@ -15,13 +36,15 @@ $(function () {
   var lii = document.querySelectorAll('.menu ul li')
   for (var i = 1; i < lii.length; i++) {
     lii[i].onmouseover = function () {
-      this.children[1].style.opacity = 1
-      this.children[1].style.zIndex = 99
+      this.children[1].style.display = block
+      // this.children[1].style.opacity = 1
+      // this.children[1].style.zIndex = 99
       this.children[1].style.transform = 'translateY(0)'
     }
     lii[i].onmouseout = function () {
-      this.children[1].style.opacity = 0
-      this.children[1].style.zIndex = -99
+      // this.children[1].style.opacity = 0
+      this.children[1].style.display = none
+      // this.children[1].style.zIndex = -99
       this.children[1].style.transform = ' translateY(40px)'
     }
   }
@@ -99,27 +122,7 @@ $(function () {
 
   })
 
-  //header fixed
-  $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    if (scroll >= 300) {
-      $('header').stop().slideDown(100);
-      $('header').css({
-        'position': 'fixed',
-        'top': 0,
-        'z-index': 999
-      })
-      $('.fanding').stop().show()
 
-    } else {
-
-      $('header').css({
-        'position': 'relative',
-        'top': '0'
-      })
-      $('.fanding').stop().hide()
-    }
-  })
 
 
   //返回顶部

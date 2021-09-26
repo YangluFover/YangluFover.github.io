@@ -1,53 +1,5 @@
 $(function () {
-  //header fixed
-  $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    if (scroll >= 300) {
-      $('header').stop().slideDown(100);
-      $('header').css({
-        'position': 'fixed',
-        'top': 0,
-        'z-index': 999
-      })
-      $('.fanding').stop().show()
 
-    } else {
-
-      $('header').css({
-        'position': 'relative',
-        'top': '0'
-      })
-      $('.fanding').stop().hide()
-    }
-  })
-  // menu效果
-  // $('.menu ul li').hover(function () {
-  //   // $(this).children('.dropdown')
-  //   $(this).children('.dropdown').stop().animate({
-  //     'opacity': 1,
-  //     'top': '100%'
-  //   })
-  // }, function () {
-  //   $(this).children('.dropdown').stop().animate({
-  //     'opacity': 0,
-
-  //   })
-  // })
-  var lii = document.querySelectorAll('.menu ul li')
-  for (var i = 1; i < lii.length; i++) {
-    lii[i].onmouseover = function () {
-      this.children[1].style.display = block
-      // this.children[1].style.opacity = 1
-      // this.children[1].style.zIndex = 99
-      this.children[1].style.transform = 'translateY(0)'
-    }
-    lii[i].onmouseout = function () {
-      // this.children[1].style.opacity = 0
-      this.children[1].style.display = none
-      // this.children[1].style.zIndex = -99
-      this.children[1].style.transform = ' translateY(40px)'
-    }
-  }
   //swiper 轮播图
   var mySwiper = new Swiper('.swiper-container2', {
     direction: 'horizontal', // 垂直切换选项
@@ -122,7 +74,48 @@ $(function () {
 
   })
 
+  //header fixed
+  $(window).scroll(function () {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 300) {
+      $('header').stop().slideDown(300);
+      $('header').css({
+        'position': 'fixed',
+        'z-index': 999,
+      })
+      $('.fanding').stop().show()
 
+    } else {
+      $('header').css({
+        'position': 'static',
+        'top': '0',
+        'z-index': 0
+      })
+      $('.fanding').stop().hide()
+    }
+  })
+  //menu效果
+  function db(down) {
+    down.find('.dropdown').css('display', 'block')
+  }
+  $('.menu ul li').mouseenter(function () {
+    // $(this).children('.dropdown')
+
+    $(this).find('.dropdown').stop().animate({
+      'opacity': 1,
+
+      'top': '45%'
+    }, 300)
+    setTimeout(db($(this)), 300)
+  })
+  $('.menu ul li').mouseleave(function () {
+    $(this).find('.dropdown').stop().animate({
+      'opacity': 0,
+
+      'top': '100%'
+    }, 300)
+    $(this).find('.dropdown').css('display', 'none')
+  })
 
 
   //返回顶部
@@ -133,4 +126,8 @@ $(function () {
   })
 
 
+
+
+
 })
+

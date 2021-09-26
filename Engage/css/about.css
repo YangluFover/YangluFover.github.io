@@ -1,0 +1,41 @@
+
+.clients{
+        background-color: #F6F6F6;
+}
+#engage{
+        background: url(../images/backgrounds/cta-bg.jpg) scroll center center;
+        width: 100%;
+        position: relative;
+}
+#engage::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: rgba(51, 51, 51, 0.9);
+}
+.cta-area {
+    display: table;
+    width: 100%;
+    height: 150px;
+}
+.cta-content h2 {
+    color: #fff;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 38px;
+}
+.cta-content p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 28px;
+    padding-top: 10px;
+}
+.cta-content .btn {
+    font-size: 16px;
+    margin-top: 15px;
+    padding: 13px 24px;
+    text-transform: uppercase;
+}
